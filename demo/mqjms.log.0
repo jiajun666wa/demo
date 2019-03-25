@@ -1,0 +1,714 @@
+2019年3月22日 下午08时37分55秒[JMSCCThreadPoolWorker-13] com.ibm.msg.client.jms.internal.JmsProviderExceptionListener
+已忽略异常，因为未注册任何异常侦听器：“
+                            消息 : com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ1107: 此连接发生了问题。
+IBM MQ JMS 连接发生了错误。
+使用链接的异常来确定此错误的原因。
+                             类 : class com.ibm.msg.client.jms.DetailedJMSException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+                               : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1976)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [1] 导致 --> 消息 : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ 调用失败，完成代码为“2”（“MQCC_FAILED”），原因码为“2009”（“MQRC_CONNECTION_BROKEN”）。
+                             类 : class com.ibm.mq.MQException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1976)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [2] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteSession.getConnection(RemoteSession.java:493)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1406)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1376)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQBACK(RemoteFAP.java:11032)
+                               : com.ibm.mq.jmqi.monitoring.JmqiInterceptAdapter.MQBACK(JmqiInterceptAdapter.java:133)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1958)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [3] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:3834)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:547)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [4] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9213: 发生 'TCP' 的通信错误。 [1=java.net.SocketException[Connection reset],4=TCP,5=sockInStream.read]
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1717)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [5] 导致 --> 消息 : java.net.SocketException: Connection reset
+                             类 : class java.net.SocketException
+                            堆栈 : java.net.SocketInputStream.read(SocketInputStream.java:209)
+                               : java.net.SocketInputStream.read(SocketInputStream.java:141)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1707)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+”。
+
+说明：
+已尝试将异常传递给该连接的异常侦听器，但是未注册侦听器。
+
+操作：
+必须向连接注册异常侦听器才能接收其异常。
+--------------------------------------------------------------------
+2019年3月22日 下午08时37分55秒[JMSCCThreadPoolWorker-13] com.ibm.msg.client.jms.internal.JmsProviderExceptionListener
+已忽略异常，因为未注册任何异常侦听器：“
+                            消息 : com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ1107: 此连接发生了问题。
+IBM MQ JMS 连接发生了错误。
+使用链接的异常来确定此错误的原因。
+                             类 : class com.ibm.msg.client.jms.DetailedJMSException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+                               : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [1] 导致 --> 消息 : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ 调用失败，完成代码为“2”（“MQCC_FAILED”），原因码为“2009”（“MQRC_CONNECTION_BROKEN”）。
+                             类 : class com.ibm.mq.MQException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [2] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteSession.getConnection(RemoteSession.java:493)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1406)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1376)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQDISC(RemoteFAP.java:2969)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQDISC(InterceptedJmqiImpl.java:427)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQDISC(ESEJMQI.java:396)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:808)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [3] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:3834)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:547)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [4] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9213: 发生 'TCP' 的通信错误。 [1=java.net.SocketException[Connection reset],4=TCP,5=sockInStream.read]
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1717)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [5] 导致 --> 消息 : java.net.SocketException: Connection reset
+                             类 : class java.net.SocketException
+                            堆栈 : java.net.SocketInputStream.read(SocketInputStream.java:209)
+                               : java.net.SocketInputStream.read(SocketInputStream.java:141)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1707)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+”。
+
+说明：
+已尝试将异常传递给该连接的异常侦听器，但是未注册侦听器。
+
+操作：
+必须向连接注册异常侦听器才能接收其异常。
+--------------------------------------------------------------------
+2019年3月22日 下午08时37分55秒[JMSCCThreadPoolWorker-12] com.ibm.msg.client.jms.internal.JmsProviderExceptionListener
+已忽略异常，因为未注册任何异常侦听器：“
+                            消息 : com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ1107: 此连接发生了问题。
+IBM MQ JMS 连接发生了错误。
+使用链接的异常来确定此错误的原因。
+                             类 : class com.ibm.msg.client.jms.DetailedJMSException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+                               : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [1] 导致 --> 消息 : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ 调用失败，完成代码为“2”（“MQCC_FAILED”），原因码为“2009”（“MQRC_CONNECTION_BROKEN”）。
+                             类 : class com.ibm.mq.MQException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [2] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteSession.getConnection(RemoteSession.java:493)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1406)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1376)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQDISC(RemoteFAP.java:2969)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQDISC(InterceptedJmqiImpl.java:427)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQDISC(ESEJMQI.java:396)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:808)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsConnectionImpl.close(JmsConnectionImpl.java:497)
+                               : com.ibm.mq.jms.MQConnection.close(MQConnection.java:90)
+                               : org.springframework.jms.connection.SingleConnectionFactory.closeConnection(SingleConnectionFactory.java:495)
+                               : org.springframework.jms.connection.SingleConnectionFactory.resetConnection(SingleConnectionFactory.java:383)
+                               : org.springframework.jms.connection.CachingConnectionFactory.resetConnection(CachingConnectionFactory.java:199)
+                               : org.springframework.jms.connection.SingleConnectionFactory.onException(SingleConnectionFactory.java:361)
+                               : org.springframework.jms.connection.SingleConnectionFactory$AggregatedExceptionListener.onException(SingleConnectionFactory.java:715)
+                               : com.ibm.msg.client.jms.internal.JmsProviderExceptionListener.run(JmsProviderExceptionListener.java:413)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [3] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:3834)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:547)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [4] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9213: 发生 'TCP' 的通信错误。 [1=java.net.SocketException[Connection reset],4=TCP,5=sockInStream.read]
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1717)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [5] 导致 --> 消息 : java.net.SocketException: Connection reset
+                             类 : class java.net.SocketException
+                            堆栈 : java.net.SocketInputStream.read(SocketInputStream.java:209)
+                               : java.net.SocketInputStream.read(SocketInputStream.java:141)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1707)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+”。
+
+说明：
+已尝试将异常传递给该连接的异常侦听器，但是未注册侦听器。
+
+操作：
+必须向连接注册异常侦听器才能接收其异常。
+--------------------------------------------------------------------
+2019年3月22日 下午08时37分55秒[jmsListenerContainerFactoryTax-12] com.ibm.msg.client.jms.internal.JmsProviderExceptionListener
+已忽略异常，因为未注册任何异常侦听器：“
+                            消息 : com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ1107: 此连接发生了问题。
+IBM MQ JMS 连接发生了错误。
+使用链接的异常来确定此错误的原因。
+                             类 : class com.ibm.msg.client.jms.DetailedJMSException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+                               : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1976)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [1] 导致 --> 消息 : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ 调用失败，完成代码为“2”（“MQCC_FAILED”），原因码为“2009”（“MQRC_CONNECTION_BROKEN”）。
+                             类 : class com.ibm.mq.MQException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1976)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [2] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteSession.getConnection(RemoteSession.java:493)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1406)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1376)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQBACK(RemoteFAP.java:11032)
+                               : com.ibm.mq.jmqi.monitoring.JmqiInterceptAdapter.MQBACK(JmqiInterceptAdapter.java:133)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1958)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [3] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:3834)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:547)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [4] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9213: 发生 'TCP' 的通信错误。 [1=java.net.SocketException[Connection reset],4=TCP,5=sockInStream.read]
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1717)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [5] 导致 --> 消息 : java.net.SocketException: Connection reset
+                             类 : class java.net.SocketException
+                            堆栈 : java.net.SocketInputStream.read(SocketInputStream.java:209)
+                               : java.net.SocketInputStream.read(SocketInputStream.java:141)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1707)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+”。
+
+说明：
+已尝试将异常传递给该连接的异常侦听器，但是未注册侦听器。
+
+操作：
+必须向连接注册异常侦听器才能接收其异常。
+--------------------------------------------------------------------
+2019年3月22日 下午08时37分55秒[jmsListenerContainerFactoryTIPS-4] com.ibm.msg.client.jms.internal.JmsProviderExceptionListener
+已忽略异常，因为未注册任何异常侦听器：“
+                            消息 : com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ1107: 此连接发生了问题。
+IBM MQ JMS 连接发生了错误。
+使用链接的异常来确定此错误的原因。
+                             类 : class com.ibm.msg.client.jms.DetailedJMSException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+                               : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1976)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [1] 导致 --> 消息 : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ 调用失败，完成代码为“2”（“MQCC_FAILED”），原因码为“2009”（“MQRC_CONNECTION_BROKEN”）。
+                             类 : class com.ibm.mq.MQException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1976)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [2] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteSession.getConnection(RemoteSession.java:493)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1406)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1376)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQBACK(RemoteFAP.java:11032)
+                               : com.ibm.mq.jmqi.monitoring.JmqiInterceptAdapter.MQBACK(JmqiInterceptAdapter.java:133)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.syncpoint(WMQSession.java:1958)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.rollback(WMQSession.java:1823)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.rollbackTransaction(JmsSessionImpl.java:2892)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:530)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [3] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:3834)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:547)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [4] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9213: 发生 'TCP' 的通信错误。 [1=java.net.SocketException[Connection reset],4=TCP,5=sockInStream.read]
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1717)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [5] 导致 --> 消息 : java.net.SocketException: Connection reset
+                             类 : class java.net.SocketException
+                            堆栈 : java.net.SocketInputStream.read(SocketInputStream.java:209)
+                               : java.net.SocketInputStream.read(SocketInputStream.java:141)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1707)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+”。
+
+说明：
+已尝试将异常传递给该连接的异常侦听器，但是未注册侦听器。
+
+操作：
+必须向连接注册异常侦听器才能接收其异常。
+--------------------------------------------------------------------
+2019年3月22日 下午08时37分55秒[jmsListenerContainerFactoryTax-12] com.ibm.msg.client.jms.internal.JmsProviderExceptionListener
+已忽略异常，因为未注册任何异常侦听器：“
+                            消息 : com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ1107: 此连接发生了问题。
+IBM MQ JMS 连接发生了错误。
+使用链接的异常来确定此错误的原因。
+                             类 : class com.ibm.msg.client.jms.DetailedJMSException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+                               : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [1] 导致 --> 消息 : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ 调用失败，完成代码为“2”（“MQCC_FAILED”），原因码为“2009”（“MQRC_CONNECTION_BROKEN”）。
+                             类 : class com.ibm.mq.MQException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [2] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteSession.getConnection(RemoteSession.java:493)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1406)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1376)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQDISC(RemoteFAP.java:2969)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQDISC(InterceptedJmqiImpl.java:427)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQDISC(ESEJMQI.java:396)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:808)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [3] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:3834)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:547)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [4] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9213: 发生 'TCP' 的通信错误。 [1=java.net.SocketException[Connection reset],4=TCP,5=sockInStream.read]
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1717)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [5] 导致 --> 消息 : java.net.SocketException: Connection reset
+                             类 : class java.net.SocketException
+                            堆栈 : java.net.SocketInputStream.read(SocketInputStream.java:209)
+                               : java.net.SocketInputStream.read(SocketInputStream.java:141)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1707)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+”。
+
+说明：
+已尝试将异常传递给该连接的异常侦听器，但是未注册侦听器。
+
+操作：
+必须向连接注册异常侦听器才能接收其异常。
+--------------------------------------------------------------------
+2019年3月22日 下午08时37分55秒[jmsListenerContainerFactoryTIPS-4] com.ibm.msg.client.jms.internal.JmsProviderExceptionListener
+已忽略异常，因为未注册任何异常侦听器：“
+                            消息 : com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ1107: 此连接发生了问题。
+IBM MQ JMS 连接发生了错误。
+使用链接的异常来确定此错误的原因。
+                             类 : class com.ibm.msg.client.jms.DetailedJMSException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+                               : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [1] 导致 --> 消息 : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ 调用失败，完成代码为“2”（“MQCC_FAILED”），原因码为“2009”（“MQRC_CONNECTION_BROKEN”）。
+                             类 : class com.ibm.mq.MQException
+                            堆栈 : com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:820)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [2] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteSession.getConnection(RemoteSession.java:493)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1406)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.allocateMQAPI(RemoteSession.java:1376)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQDISC(RemoteFAP.java:2969)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQDISC(InterceptedJmqiImpl.java:427)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQDISC(ESEJMQI.java:396)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.disconnect(WMQSession.java:808)
+                               : com.ibm.msg.client.wmq.internal.WMQSession.close(WMQSession.java:771)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:643)
+                               : com.ibm.msg.client.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:349)
+                               : com.ibm.mq.jms.MQSession.close(MQSession.java:275)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.physicalClose(CachingConnectionFactory.java:481)
+                               : org.springframework.jms.connection.CachingConnectionFactory$CachedSessionInvocationHandler.invoke(CachingConnectionFactory.java:311)
+                               : com.sun.proxy.$Proxy62.close(null:-1)
+                               : org.springframework.jms.support.JmsUtils.closeSession(JmsUtils.java:109)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.clearResources(DefaultMessageListenerContainer.java:1241)
+                               : org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1087)
+                               : java.lang.Thread.run(Thread.java:745)
+               由 [3] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:3834)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:547)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [4] 导致 --> 消息 : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9213: 发生 'TCP' 的通信错误。 [1=java.net.SocketException[Connection reset],4=TCP,5=sockInStream.read]
+                             类 : class com.ibm.mq.jmqi.JmqiException
+                            堆栈 : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1717)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+               由 [5] 导致 --> 消息 : java.net.SocketException: Connection reset
+                             类 : class java.net.SocketException
+                            堆栈 : java.net.SocketInputStream.read(SocketInputStream.java:209)
+                               : java.net.SocketInputStream.read(SocketInputStream.java:141)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1707)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:733)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:699)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:139)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+”。
+
+说明：
+已尝试将异常传递给该连接的异常侦听器，但是未注册侦听器。
+
+操作：
+必须向连接注册异常侦听器才能接收其异常。
+--------------------------------------------------------------------
